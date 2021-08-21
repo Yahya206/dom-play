@@ -1,0 +1,68 @@
+<html>
+<head>
+<style>
+
+
+</style>
+</head>
+<body>
+    <h1>DOM Play</h1>
+    <div id="play">
+    <p><span data-actor="Miss Perky">Miss Perky: So, Cameron. Here you go. 9 schools in 10 years.</span></p>
+    <p><span data-actor="Cameron">Cameron: Yeah. My dad's a...</span></p>
+    <p><span data-actor="Miss Perky">Miss Perky: That's enough.</span></p>
+    <p><span data-actor="Cameron">Cameron: Am I in the right office?</span></p>
+    <p><span data-actor="Miss Perky">Miss Perky: Not anymore you're not.</span></p>
+    <p><span data-actor="Patrick">Patrick: Should I, uh, get the lights?</span></p>
+    </div>
+    <script>
+    
+    //we are using the the CSS descendent selector to access the spans
+    const spans = document.querySelectorAll('div#play span');
+
+    console.log(spans);
+
+
+    for(const mySpan of spans){
+        mySpan.addEventListener("click", function(ev){
+            //alert(mySpan.dataset.actor);
+        highlightActor(mySpan.dataset.actor);
+         
+        });
+    }
+
+    
+
+    function highlightActor(myActor){
+        
+
+        for(const mySpan of spans){
+
+        if(myActor == mySpan.dataset.actor){
+            mySpan.style.backgroundColor ='yellow';
+        }else{
+            mySpan.style.backgroundColor = 'white';
+        }
+
+
+        }
+
+
+
+
+
+        if(el.style.backgroundColor == 'white'){
+            el.style.backgroundColor ='yellow';
+        }else{
+            el.style.backgroundColor = 'white';
+        }
+        
+        
+        
+        
+       
+    }
+
+    </script>
+</body>
+</html>
